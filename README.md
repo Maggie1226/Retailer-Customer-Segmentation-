@@ -1,4 +1,4 @@
-# Retailer-Customer-Segmentation-
+# Retailer Customer Segmentation Analysis 
 This is a data challenge with data provided by Walmart Lab. 
 ## 1. Business Problem and Approach 
 
