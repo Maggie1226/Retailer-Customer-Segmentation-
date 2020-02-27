@@ -1,6 +1,8 @@
 # Retailer-Customer-Segmentation-
 
-## 1. Business Problem and Approach 1.1 Background
+## 1. Business Problem and Approach 
+
+### 1.1 Background
 It is obvious that the most successful companies today are the ones that know their customers so well that they can anticipate their needs. Data analysts play a key role in unlocking these in-depth insights, and segmenting the customers to better serve them. Now we were given a retail data containing its transaction between 2016 and 2017, information of the products it sold, and demographics of 100 household. We would like to explore this retail data and provides insightful findings and suggestions so as to get better understand of its customers.
 
 ### 1.2 Business Problem
@@ -29,41 +31,50 @@ To simplify our problems, combined with some general analysis of these data, I m
 * Customers behavior are seasonal, especially for food and non-food department
   These findings provide us a foundation of analyzing this retail’s customer engagement
   
-### 3.2 Customer Engagement over Time 3.2.1 Customer Acquisition and Retention
+### 3.2 Customer Engagement over Time 
+#### 3.2.1 Customer Acquisition and Retention
  As shown in the above picture,
-![Figure 1](https://github.com/Maggie1226/Retailer-Customer-Segmentation-/blob/master/Picture1.png "Figure 1 Cohort Anlaysis")
-*Figure 1 Cohort Anlaysis*
+ 
+![Figure 1](https://github.com/Maggie1226/Retailer-Customer-Segmentation-/blob/master/Picture1.png?style=centerme)
+ <p align=center>Figure 1 Cohort Anlaysis </p>
 
  * The left side represent number of new customers acquired in each month. More than half of these customers are acquired at or before Jan, 2016. Then, this retail gains customer gradually by single digits each month.
 * The customers gained at or before Jan, 2016 show loyalty toward this retail, while customers gained afterwards tend to churned
 
 ####  3.2.2 Does customer spend more or less?
-We choose average customer spend value per month as metric to evaluate the customer engagement at first glance. Specifically, to better represent customers’ behavior over time, we set number of months since they were acquired as variable. According to figure “‘the retention matrix of ‘avg_customer_spend_value’ “for all product type) and supplement figure “the retention matrix of ‘avg_customer_bought_items’” for all product type), after exclude some outliers, customer seems to spend more over time. In detail, customers spend more on food as they become more settled, especially for meat, beverage (Figure 2,3). While customer spend less
+We choose average customer spend value per month as metric to evaluate the customer engagement at first glance. Specifically, to better represent customers’ behavior over time, we set number of months since they were acquired as variable. According to figure “‘the retention matrix of ‘avg_customer_spend_value’ “for all product type) and supplement figure “the retention matrix of ‘avg_customer_bought_items’” for all product type), after exclude some outliers, customer seems to spend more over time. In detail, customers spend more on food as they become more settled, especially for meat, beverage (Figure 2,3). While customer spend less on produce as time goes by (Figure 3). This is reasonable because they need produce products when they first moved to some place. (However, as the actually acquisition date of these customer are not guaranteed, these deductions might be wrong.)
+ 
 
- on produce as time goes by (Figure 3). This is reasonable because they need produce products when they first moved to some place. (However, as the actually acquisition date of these customer are not guaranteed, these deductions might be wrong.)
-![Figure 2](https://github.com/Maggie1226/Retailer-Customer-Segmentation-/blob/master/Picture2.png "Figure 2")
-*Figure 2* 
+![Figure 2](https://github.com/Maggie1226/Retailer-Customer-Segmentation-/blob/master/Picture2.png?style=centerme)
+<p align=center>Figure 2 </p>
 
-![Figure 3](https://github.com/Maggie1226/Retailer-Customer-Segmentation-/blob/master/Picture3.png "Figure 3")
-*Figure 3* 
 
-### 3.3 Customer Segmentation 3.3.1 RFM Score
+![Figure 3](https://github.com/Maggie1226/Retailer-Customer-Segmentation-/blob/master/Picture3.png?style=centerme)
+<p align=center>Figure 3 </p>
+
+### 3.3 Customer Segmentation 
+
+#### 3.3.1 RFM Score
 RFM Segmentation is classical method to analyze customer value. RFM stands for recency, frequency, and monetary. These three metrics provide a well description of customer engagement. Recency measures the time between when customer last ordered to today. Frequency measures how many total orders the customers had, and Monetary is the average amount they spent from those orders.
 In this analysis, we select the maximum date of transaction overall as ‘today’, and calculate recency in days. Also, we only analyze the department of food since they contribute to majority transactions.
 The results are as follows:
- ![Figure 4](https://github.com/Maggie1226/Retailer-Customer-Segmentation-/blob/master/Picture4.png "Figure 4")
- *Figure 4 The Distribution of customers’ RFM Score*
+
+ ![Figure 4](https://github.com/Maggie1226/Retailer-Customer-Segmentation-/blob/master/Picture4.png?style=centerme)
+ <p align=center>Figure 4 The Distribution of customers’ RFM Score <p>
+ 
 
  We can figure out that a good number of customers come to the retail very often, spend a lot and are still active recently, in other words, they are very engaged. While some other customers just come across and never step in this retail again, these are so-called lazy or even lost customer.
 
 #### 3.3.2 Customer Segmentation
 We then clustered these customers into 3 class based on the RFM score by kmeans algorithm. The result shows as below:
 
-![Figure 5](https://github.com/Maggie1226/Retailer-Customer-Segmentation-/blob/master/Picture5.png "Figure 5")
-*Figure 5 The Result of RFM Segmentation*
 
-![Figure 6](https://github.com/Maggie1226/Retailer-Customer-Segmentation-/blob/master/Picture6.png "Figure 6")  
-*Figure 6*
+![Figure 5](https://github.com/Maggie1226/Retailer-Customer-Segmentation-/blob/master/Picture5.png?style=centerme)
+<p align=center>Figure 5 The Result of RFM Segmentation </p>
+
+
+![Figure 6](https://github.com/Maggie1226/Retailer-Customer-Segmentation-/blob/master/Picture6.png?style=centerme)  
+<p align=center>Figure 6 </p>
  According to the result, we can label our customer into 3 type:
  | Active/Loyal        | Lazy           | Lost |
 | :-------------: |:-------------:| :-----:|
