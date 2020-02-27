@@ -75,12 +75,14 @@ We then clustered these customers into 3 class based on the RFM score by kmeans 
 
 ![Figure 6](https://github.com/Maggie1226/Retailer-Customer-Segmentation-/blob/master/Picture6.png?style=centerme)  
 <p align=center>Figure 6 </p>
- According to the result, we can label our customer into 3 type:
- | Active/Loyal        | Lazy           | Lost |
-| :-------------: |:-------------:| :-----:|
-| recently has been to the retail     |it has been sometime but not very long since its last visit time|it has been a long while since its last visit time|
-| goes very often   | visit few times     |   visit few times |
-| spend a lot | spend very less     |   spend very less |
+
+According to the result, we can label our customer into 3 type:
+ 
+|           Active/Loyal          |                               Lazy                               |                        Lost                        |
+|:-------------------------------:|:----------------------------------------------------------------:|:--------------------------------------------------:|
+| recently has been to the retail | it has been sometime but not very long since its last visit time | it has been a long while since its last visit time |
+|         goes very often         |                          visit few times                         |                   visit few times                  |
+|           spend a lot           |                         spend very less                          |                   spend very less                  |
 
       
 The active customers are our most important customers. They keep making contributions to the retail’ revenue and generate more profits within one purchase. The lazy group are customers we should focus on currently to transfer into active/loyal customers. While the customers nearly never visit this retail again can be treated as lost, and there are few profits to put efforts to save them.
